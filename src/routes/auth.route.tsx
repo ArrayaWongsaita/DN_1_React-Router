@@ -1,6 +1,7 @@
 import type { RouteObject } from "react-router";
 import LoginPage from "../pages/auth/Login.page";
 import RegisterPage from "../pages/auth/Register.page";
+import AuthLayout from "../layouts/Auth.layout";
 
 const authChildRoutes: RouteObject[] = [
   { path: "login", element: <LoginPage /> },
@@ -9,5 +10,6 @@ const authChildRoutes: RouteObject[] = [
 
 export const authLayoutRoute: RouteObject = {
   path: "/auth",
+  element: <AuthLayout />,
   children: authChildRoutes,
 };

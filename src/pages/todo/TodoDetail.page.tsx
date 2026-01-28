@@ -1,5 +1,4 @@
 import { useParams, useSearchParams } from "react-router";
-import Header from "../../components/Header";
 
 export default function TodoDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -10,7 +9,6 @@ export default function TodoDetailPage() {
 
   return (
     <div>
-      <Header />
       <div>TodoDetailPage</div>
       <div>Id : {id}</div>
       <div>search : {search}</div>
