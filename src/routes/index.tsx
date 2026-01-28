@@ -11,17 +11,15 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { index: true, element: <div>Home</div> }, //Outlet
-      { path: "test", element: <div>test</div> }, // Outlet
-      { path: "test2", element: <div>test2</div> }, // Outlet
+      // todo
+      todoLayoutRoute,
+      // auth
+      authLayoutRoute,
+
+      // user
+      userLayoutRoute,
     ],
   },
-  // todo
-  todoLayoutRoute,
-  // auth
-  authLayoutRoute,
-
-  // user
-  userLayoutRoute,
 
   // not found
   //   { path: "*", element: <div>Not found</div> },
