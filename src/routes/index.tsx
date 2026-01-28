@@ -4,6 +4,7 @@ import { authLayoutRoute } from "./auth.route";
 import { userLayoutRoute } from "./user.route";
 import { todoLayoutRoute } from "./todo.route";
 import MainLayout from "../layouts/Main.layout";
+import { postLayoutRoute } from "./post.route";
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,9 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { index: true, element: <div>Home</div> }, //Outlet
+
+      // post
+      postLayoutRoute,
       // todo
       todoLayoutRoute,
       // auth
