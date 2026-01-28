@@ -4,9 +4,10 @@ import TodoDetailPage from "../pages/todo/TodoDetail.page";
 import EditTodoPage from "../pages/todo/EditTodo.page";
 import DeleteTodoPage from "../pages/todo/DeleteTodo.page";
 import TodoLayout from "../layouts/Todo.layout";
+import { loadTodos } from "../loaders/todo.loader";
 
 const todoChildRoutes: RouteObject[] = [
-  { path: "list/:page", element: <TodoListPage /> },
+  { path: "list/:page", element: <TodoListPage />, loader: loadTodos },
   { path: ":id", element: <TodoDetailPage /> },
   { path: "edit/:id", element: <EditTodoPage /> },
   { path: "delete/:id", element: <DeleteTodoPage /> },
