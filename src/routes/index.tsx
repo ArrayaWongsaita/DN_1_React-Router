@@ -3,9 +3,18 @@ import { createBrowserRouter, Navigate } from "react-router";
 import { authLayoutRoute } from "./auth.route";
 import { userLayoutRoute } from "./user.route";
 import { todoLayoutRoute } from "./todo.route";
+import MainLayout from "../layouts/Main.layout";
 
 const router = createBrowserRouter([
-  { path: "/", element: <div>Home</div> },
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      { index: true, element: <div>Home</div> }, //Outlet
+      { path: "test", element: <div>test</div> }, // Outlet
+      { path: "test2", element: <div>test2</div> }, // Outlet
+    ],
+  },
   // todo
   todoLayoutRoute,
   // auth

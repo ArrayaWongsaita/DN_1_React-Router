@@ -1,3 +1,10 @@
+import Header from "../../components/Header";
+
 export default function RegisterPage() {
-  return <div>RegisterPage</div>;
+  return (
+    <div>
+      <Header />
+      RegisterPage
+    </div>
+  );
 }
