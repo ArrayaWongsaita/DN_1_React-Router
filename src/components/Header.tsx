@@ -10,6 +10,7 @@ export default function Header() {
       <div className="space-x-4">
         <Link to="/user">user</Link>
         <Link to="/todo/list/1">todo</Link>
+        <Link to="/post/list/1">post</Link>
       </div>
 
       <div className="space-x-4">

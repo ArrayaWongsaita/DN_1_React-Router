@@ -2,6 +2,8 @@ import axios from "axios";
 import type { LoaderFunctionArgs } from "react-router";
 
 export const loadTodos = async (args: LoaderFunctionArgs) => {
+  await new Promise((r) => setTimeout(r, 5000));
+
   const { request } = args;
 
   console.log("request.url", request.url);

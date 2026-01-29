@@ -2,6 +2,8 @@ import { useLoaderData, useParams } from "react-router";
 import type { Todo } from "./TodoList.page";
 
 export default function DeleteTodoPage() {
+  throw new Error("error วันดี  กีกว่่า error เมื่อวาน");
+
   const params = useParams<{ id: string }>();
   const { id, completed, title, userId } = useLoaderData<Todo>();
   return (
