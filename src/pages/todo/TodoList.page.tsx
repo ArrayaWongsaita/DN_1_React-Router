@@ -16,7 +16,10 @@ export default function TodoListPage() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const limitValue = searchParams.get("limit") || "";
-
+  console.log(
+    "(isNaN(+limitValue) ? 10 : +limitValue)",
+    isNaN(+limitValue) ? 10 : +limitValue,
+  );
   return (
     <div>
       <div>
@@ -49,10 +52,15 @@ export default function TodoListPage() {
           </div>
         ))}
       </div>
-      {[1, 2, 3, 4].map((number) => (
+      {Array.from(
+        { length: 200 / (isNaN(+limitValue) ? 10 : +limitValue || 10) },
+        (_, index) => index + 1,
+      ).map((number) => (
         <button
           className="bg-blue-500 m-2 p-2"
-          onClick={() => setSearchParams({ page: String(number) })}
+          onClick={() =>
+            setSearchParams({ page: String(number), limit: limitValue })
+          }
         >
           {number}
         </button>
