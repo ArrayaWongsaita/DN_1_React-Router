@@ -19,11 +19,14 @@ export default function TodoListPage() {
 
   return (
     <div>
-      <input
-        className="border"
-        value={limitValue}
-        onChange={(e) => setSearchParams({ limit: e.target.value })}
-      />
+      <div>
+        limit :
+        <input
+          className="border"
+          value={limitValue}
+          onChange={(e) => setSearchParams({ limit: e.target.value })}
+        />
+      </div>
       <div>TodoListPage</div>
       <div>Page : {params.page}</div>
 
@@ -46,6 +49,14 @@ export default function TodoListPage() {
           </div>
         ))}
       </div>
+      {[1, 2, 3, 4].map((number) => (
+        <button
+          className="bg-blue-500 m-2 p-2"
+          onClick={() => setSearchParams({ page: String(number) })}
+        >
+          {number}
+        </button>
+      ))}
     </div>
   );
 }
