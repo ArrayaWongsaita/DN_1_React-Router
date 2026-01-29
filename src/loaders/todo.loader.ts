@@ -11,5 +11,14 @@ export const loadTodos = async (args: LoaderFunctionArgs) => {
   });
   return res.data;
 };
+
+export const loadTodoById = async ({ params }: LoaderFunctionArgs) => {
+  const res = await axios.get(
+    `https://jsonplaceholder.typicode.com/todos/${params.id}`,
+  );
+
+  return res.data;
+};
+
 // (event)=>
 // loadTodos(something)

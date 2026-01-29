@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router";
+import { Link, useLoaderData, useParams } from "react-router";
 
 export type Todo = {
   completed: boolean;
@@ -29,10 +29,10 @@ export default function TodoListPage() {
             <div>{todo.completed ? "Completed" : "Not Completed"}</div>
 
             <button className="bg-blue-500 text-white px-2 py-1 rounded">
-              Edit
+              <Link to={`/todo/edit/${todo.id}`}>Edit</Link>
             </button>
             <button className="bg-red-500 text-white px-2 py-1 rounded">
-              Delete
+              <Link to={`/todo/delete/${todo.id}`}> Delete</Link>
             </button>
           </div>
         ))}
