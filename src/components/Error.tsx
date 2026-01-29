@@ -6,7 +6,7 @@ export default function ErrorComponent() {
   if (error instanceof Error) {
     return (
       <div>
-        <p>error instanceof Error</p>
+        <p>errors instanceof Error</p>
         <p>message : {error.message}</p>
       </div>
     );
