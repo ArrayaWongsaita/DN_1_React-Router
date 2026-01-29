@@ -1,4 +1,4 @@
-import { Link, useLoaderData, useParams } from "react-router";
+import { Link, useLoaderData, useParams, useSearchParams } from "react-router";
 
 export type Todo = {
   completed: boolean;
@@ -13,8 +13,17 @@ export default function TodoListPage() {
   const params = useParams<{ page: string }>();
   // console.log("params", params);
 
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const limitValue = searchParams.get("limit") || "";
+
   return (
     <div>
+      <input
+        className="border"
+        value={limitValue}
+        onChange={(e) => setSearchParams({ limit: e.target.value })}
+      />
       <div>TodoListPage</div>
       <div>Page : {params.page}</div>
 

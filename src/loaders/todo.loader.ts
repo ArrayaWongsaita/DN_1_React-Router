@@ -19,6 +19,3 @@ export const loadTodoById = async ({ params }: LoaderFunctionArgs) => {
 
   return res.data;
 };
-
-// (event)=>
-// loadTodos(something)
