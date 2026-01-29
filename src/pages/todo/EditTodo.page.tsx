@@ -4,7 +4,6 @@ import type { Todo } from "./TodoList.page";
 export default function EditTodoPage() {
   const { id } = useParams<{ id: string }>();
   const data = useLoaderData<Todo>();
-  console.log("data", data);
   return (
     <div>
       <div>EditTodoPage</div>

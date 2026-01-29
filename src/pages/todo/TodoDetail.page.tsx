@@ -1,4 +1,5 @@
-import { useParams, useSearchParams } from "react-router";
+import { useLoaderData, useParams, useSearchParams } from "react-router";
+import type { Todo } from "./TodoList.page";
 
 export default function TodoDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -6,6 +7,8 @@ export default function TodoDetailPage() {
 
   const search = searchParams.get("search") || "";
   const type = searchParams.get("type") || "";
+
+  const todo = useLoaderData<Todo>();
 
   return (
     <div>
@@ -21,6 +24,9 @@ export default function TodoDetailPage() {
           setSearchParams({ search: e.target.value });
         }}
       />
+      <div>title : {todo.title}</div>
+      <div>{todo.completed ? "completed" : "not completed"}</div>
+      <div> userID : {todo.userId}</div>
     </div>
   );
 }
